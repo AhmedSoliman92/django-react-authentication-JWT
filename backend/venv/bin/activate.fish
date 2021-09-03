@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/ahmed/django-react-JWT/backend/venv"
+set -gx VIRTUAL_ENV "/home/ahmedsoliman/Documents/django-react-authentication-JWT/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

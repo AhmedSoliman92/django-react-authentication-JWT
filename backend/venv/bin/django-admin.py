@@ -1,4 +1,4 @@
-#!/home/ahmed/django-react-JWT/backend/venv/bin/python3
+#!/home/ahmedsoliman/Documents/django-react-authentication-JWT/venv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

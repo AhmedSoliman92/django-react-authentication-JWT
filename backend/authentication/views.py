@@ -3,15 +3,16 @@ from rest_framework.generics import CreateAPIView,RetrieveAPIView,GenericAPIView
 from .serializer import LoginSerializer, RegisterSerializer, LogoutSerializer
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-class RegisterView(CreateAPIView):
+class RegisterView(GenericAPIView):
     permission_classes =[]
     authentication_classes =[]
     serializer_class = RegisterSerializer
     def post(self,request):
         serializer= self.serializer_class(data=self.request.data)
+
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-
+            print(serializer.errors)
             return Response(serializer.data,status=status.HTTP_201_CREATED)
 
 class LoginView(GenericAPIView):
@@ -22,6 +23,7 @@ class LoginView(GenericAPIView):
     def post(self,request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
+        
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class LogoutView(GenericAPIView):
